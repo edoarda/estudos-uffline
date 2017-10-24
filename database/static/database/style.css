@@ -1,0 +1,15 @@
+ a {
+    color: white;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif
+    position: fixed;
+    right: 35px;
+    bottom: 35px;
+}
+body {
+    background: navy url("images/logouff.png");
+    background-repeat: no-repeat;
+    padding:35px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
