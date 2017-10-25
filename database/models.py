@@ -7,8 +7,9 @@ class Grupo(models.Model):
     def __str__(self):
         return str(self.materia_key)
 
-    t_inicio = models.DateTimeField('data e horário de inicio')
-    t_fim = models.DateTimeField('data e horário de fim')
+    date = models.DateField(default='1900-1-1')
+    t_inicio = models.TimeField(default='9:00')
+    t_fim = models.TimeField(default='22:00')
     n_total = models.PositiveSmallIntegerField(default=5)
     n_atual = models.PositiveSmallIntegerField(default=1)
     local = models.CharField(max_length=200)
