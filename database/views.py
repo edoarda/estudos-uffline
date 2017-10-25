@@ -15,15 +15,12 @@ class IndexView(generic.ListView):
 class MenuMateriaView(generic.ListView):
 	model = Materia
 	template_name = 'database/menumateria.html'
-	'''all_models_dict = {
-        "template_name": "contacts/index.html",
-        "queryset": Individual.objects.all(),
-        "extra_context" : {"grupo_list" : Grupo.objects.all(),
-                           "dataprova_list": DataProva.objects.all(),
-						   "material_list": Material.object.all(),
-                           #and so on for all the desired models...
-                           }
-    }'''
+	def get_context_data(self, **kwargs):
+		context = super(MultipleModelView, self).get_context_data(**kwargs)
+		context['grupo_list'] = Grupo.objects.filter(codigo=self.kwargs['materia_codigo'])
+		context['dataprova_list'] = DataProva.objects.filter(codigo=self.kwargs['materia_codigo'])
+		context['recurso_list'] = Recurso.objects.filter(codigo=self.kwargs['materia_codigo'])
+		return context
 
 #def menumateria(request, materia_codigo):
 #	choice = get_object_or_404(Materia, Materia.objects.filter(codigo=materia_codigo))
