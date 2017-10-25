@@ -6,6 +6,7 @@ from .models import Periodo
 from .models import Recurso
 from .models import Foto
 from .models import URL
+from .models import DataProva
 
 admin.site.register(Grupo)
 admin.site.register(Materia)
@@ -13,3 +14,4 @@ admin.site.register(Periodo)
 admin.site.register(Recurso)
 admin.site.register(Foto)
 admin.site.register(URL)
+admin.site.register(DataProva)
