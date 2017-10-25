@@ -39,6 +39,7 @@ class Recurso(models.Model):
 
     nome = models.CharField(max_length=80)
     descricao = models.CharField(max_length=500)
+    materia_key= models.ForeignKey('Materia', on_delete=models.PROTECT, default='AAA00000')
 
 class Foto(models.Model):
 

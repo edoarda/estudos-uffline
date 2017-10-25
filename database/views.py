@@ -1,4 +1,8 @@
 from .models import Materia
+from .models import Grupo
+from .models import DataProva
+from .models import Recurso
+
 from django.http import HttpResponseRedirect
 from django.views import generic
 from django.shortcuts import get_object_or_404, render
@@ -16,10 +20,10 @@ class MenuMateriaView(generic.ListView):
 	model = Materia
 	template_name = 'database/menumateria.html'
 	def get_context_data(self, **kwargs):
-		context = super(MultipleModelView, self).get_context_data(**kwargs)
-		context['grupo_list'] = Grupo.objects.filter(codigo=self.kwargs['materia_codigo'])
-		context['dataprova_list'] = DataProva.objects.filter(codigo=self.kwargs['materia_codigo'])
-		context['recurso_list'] = Recurso.objects.filter(codigo=self.kwargs['materia_codigo'])
+		context = super(MenuMateriaView, self).get_context_data(**kwargs)
+		context['grupo_list'] = Grupo.objects.filter(materia_key=self.kwargs['materia_codigo'])
+		context['dataprova_list'] = DataProva.objects.filter(materia_key=self.kwargs['materia_codigo'])
+		context['recurso_list'] = Recurso.objects.filter(materia_key=self.kwargs['materia_codigo'])
 		return context
 
 #def menumateria(request, materia_codigo):

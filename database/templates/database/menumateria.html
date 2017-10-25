@@ -10,7 +10,7 @@
   <meta name="author" content="">
   <title>{{ nome }}</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">	
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <!-- Bootstrap core CSS-->
   <link href="{% static 'database/css/bootstrap.min.css' %}" rel="stylesheet">
   <!-- Custom styles for this template-->
@@ -51,6 +51,35 @@
 		<li>11/07/2021 - VS</li>
 		<input type="submit" value="add uma data importante"/>
 	</div>
+
+  <div class="container">
+  <h2>Grupos Criados</h2>
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>>
+        <th>Horário Inicial</th>
+        <th>Horário Final</th>
+        <th>Pessoas / Tl. de lugares</th>
+        <th>Localização</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for grupo in grupo_list %}
+          <tr>
+            <div>
+                <td>{{ grupo.t_inicio }}</td>
+                <td>{{ grupo.t_fim }}</td>
+                <td>{{ grupo.n_atual }} / {{grupo.n_total}}</td>
+                <td>{{ grupo.local }}</td>
+            </div>
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>
+
 	<div class="doom">
 		<img src="{% static 'database/images/materiais.png' %}"/>
 		<h2>Materiais</h2>
