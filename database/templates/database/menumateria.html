@@ -80,6 +80,33 @@
   </div>
 </div>
 
+<div class="container">
+  <h2>Datas das Provas</h2>
+  <div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>>
+        <th>Turma</th>
+        <th>Data</th>
+        <th>Prova</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for prova in dataprova_list %}
+          <tr>
+            <div>
+                <td>{{ prova.turma }}</td>
+                <td>{{ prova.data }}</td>
+                <td>{{ prova.prova }}</td>
+            </div>
+          </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+  </div>
+</div>
+
+
 	<div class="doom">
 		<img src="{% static 'database/images/materiais.png' %}"/>
 		<h2>Materiais</h2>
