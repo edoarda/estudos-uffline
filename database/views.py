@@ -16,7 +16,12 @@ class MenuMateriaView(generic.ListView):
 	model = Materia
 	template_name = 'database/menumateria.html'
 
-def choose(request, materia_codigo):
-	choice = Materia.get_object_or_404(Materia, pk=materia_codigo)
-	return HttpResponseRedirect(reverse('database:menumateria', args = (choice.codigo,)))
+#def menumateria(request, materia_codigo):
+#	choice = get_object_or_404(Materia, Materia.objects.filter(codigo=materia_codigo))
+    #codigo = materia_codigo
+#	return HttpResponseRedirect(reverse('database:menumateria', args = (choice.codigo,)))
 # Create your views here.
+
+def menumateria(request, materia_codigo):
+    treco = Materia.objects.filter(codigo=materia_codigo)
+    return render(request, 'database/menumateria.html', {'nome' : treco})
