@@ -1,0 +1,20 @@
+.page-header {
+    background-color: #309490;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: teal;
+    font-size: 36pt;
+    text-decoration: none;
+}
+
+.page-header a, .page-header a:visited, .page-header a:active {
+    color: teal;
+    text-decoration: none;
+}
+
+body {
+	background: #9090A0;
+}
