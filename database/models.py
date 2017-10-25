@@ -56,8 +56,8 @@ class URL(models.Model):
 class DataProva(models.Model):
     def __str__(self):
         return
-    data = models.DateField('')
-    prova = models.CharField(max_length=2)
+    data = models.DateField(default='1900-1-1')
+    prova = models.CharField(max_length=2, default='VS')
     periodo_key = models.ForeignKey('Periodo', on_delete=models.PROTECT, default=20001)
     materia_key = models.ForeignKey('Materia', on_delete=models.PROTECT, default=20001)
     #turma = models.ForeignKey('Materia', on_delete=models.PROTECT, null=True, blank=True, default='A1', tofield='turma')

@@ -108,6 +108,10 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'America/Sao_Paulo'
 
+DATE_FORMAT = ('d-m-Y')
+
+DATETIME_FORMAT = 'd-m-Y H:m:s T' 
+
 USE_I18N = True
 
 USE_L10N = True
