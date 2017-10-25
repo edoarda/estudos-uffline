@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 from django.views import generic
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
+from django.forms import modelformset_factory
 
 class LogView(generic.ListView):
 	model = Materia
@@ -38,3 +39,33 @@ def menumateria(request, materia_codigo):
     #treco = treco.order_by(+t_fim)
     treco = Materia.objects.filter(codigo=materia_codigo)
     return render(request, 'database/menumateria.html', {'nome' : treco})
+
+class AddGrupoView(generic.ListView):
+	model = Materia
+	template_name = 'database/addgrupo.html'
+
+def AddGrupoView(request):
+	GrupoFormSet = modelformset_factory(Grupo, fields=('__all__'))
+	if request.method == 'POST':
+		formset = GrupoFormSet(request.POST, request.FILES)
+		if formset.is_valid():
+			formset.save()
+	else: 
+		formset = GrupoFormSet()
+	return render(request, 'addgrupo.html', {'formset':formset})
+
+class AddDataView(generic.ListView):
+	model = Materia
+	template_name = 'database/addgrupo.html'
+
+def AddDataView(request):
+	DataFormSet = modelformset_factory(DataProva, fields=('__all__'))
+	if request.method == 'POST':
+		formset = DataFormSet(request.POST, request.FILES)
+		if formset.is_valid():
+			formset.save()
+	else: 
+		formset = DataFormSet()
+	return render(request, 'addgrupo.html', {'formset':formset})
+
+

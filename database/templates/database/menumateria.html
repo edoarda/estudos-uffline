@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>{{ nome }}</title>
+  <title>{% for nomes in nome_disc %}{{ nomes.nome }}: Turma {{ nomes.turma }}{% endfor %}</title>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <!-- Bootstrap core CSS-->
@@ -64,7 +64,7 @@
 			</tbody>
 		  </table>
 		</div>
-		<input type="submit" value="add grupo"/>
+		<a href="{% url 'database:addgrupo' %}" method="post"><input type="submit" value="add grupo"/></a>
 	</div>
 
 	<div class="doom">
@@ -92,13 +92,13 @@
 			</tbody>
 		  </table>
 		</div>
-		<input type="submit" value="add uma data importante"/>
+		<a href="{% url 'database:adddata' %}" method="post"><input type="submit" value="add uma data importante"/></a>
   	</div>
 
 	<div class="doom">
 		<img src="{% static 'database/images/materiais.png' %}"/>
 		<h2>Materiais</h2>
-		<input type="submit" value="upload material"/>
+		<input type="submit" value="upload material"/></a>
 	</div>
 
 	<div class="doom">
