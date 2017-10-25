@@ -21,6 +21,7 @@ class MenuMateriaView(generic.ListView):
 	template_name = 'database/menumateria.html'
 	def get_context_data(self, **kwargs):
 		context = super(MenuMateriaView, self).get_context_data(**kwargs)
+		context['nome_disc'] = Materia.objects.filter(codigo=self.kwargs['materia_codigo'])
 		context['grupo_list'] = Grupo.objects.filter(materia_key=self.kwargs['materia_codigo'])
 		context['dataprova_list'] = DataProva.objects.filter(materia_key=self.kwargs['materia_codigo'])
 		context['recurso_list'] = Recurso.objects.filter(materia_key=self.kwargs['materia_codigo'])
