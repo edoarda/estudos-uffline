@@ -23,5 +23,7 @@ class MenuMateriaView(generic.ListView):
 # Create your views here.
 
 def menumateria(request, materia_codigo):
+    #treco = Grupo.objects.filter(materia_key = materia_codigo)
+    #treco = treco.order_by(+t_fim)
     treco = Materia.objects.filter(codigo=materia_codigo)
     return render(request, 'database/menumateria.html', {'nome' : treco})

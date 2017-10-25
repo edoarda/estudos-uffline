@@ -16,7 +16,7 @@ class Grupo(models.Model):
 
 class Materia(models.Model):
     class Meta:
-        unique_together = ('codigo', 'turma')
+        unique_together = ('codigo', 'turma', 'periodo_key')
 
     def __str__(self):
         return self.nome
@@ -24,7 +24,7 @@ class Materia(models.Model):
     codigo = models.CharField(max_length=8, primary_key=True)
     nome = models.CharField(max_length=40, default='me dê um nome de verdade')
     turma = models.CharField(max_length=2)
-    periodo_key = models.ForeignKey('Periodo', on_delete=models.PROTECT)
+    periodo_key = models.ForeignKey('Periodo', on_delete=models.PROTECT, default=20001)
 
 class Periodo(models.Model):
     def __str__(self):
