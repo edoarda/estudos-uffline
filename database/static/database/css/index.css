@@ -1,0 +1,29 @@
+body {
+	background-color: #9090A0;
+	font-family: Comicsans, sans-serif;
+	
+}
+
+
+.nav{
+	padding-right: 10px;
+	padding-top: 20px;
+	padding-left: 10px;
+	
+	}
+
+.nav-pills{
+	color: black;
+
+}
+
+
+.doom {
+	padding: 20px 20px 20px 40px;
+	background-color: grey;
+}
+.doom a{
+	color: black;
+
+
+}

@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+{% load static %}
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,6 +12,7 @@
     <link rel="icon" href="favicon.ico">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">	
+	  <link href="{% static 'database/css/index.css' %}" rel="stylesheet">
 
 
     <title>Hackaton!</title>
@@ -22,45 +25,77 @@
   </head>
 
   <body>
-	<div class="container">
+	<div class="doom">
 		<div class="page-header">
 
-			<p> Insira Fota aqui e Pans </p>
-
+			<img src="{% static 'database/images/logouff_smol.png' %}" class="img-fluid" alt="Responsive image"/>
 
 		</div>
+			<div class="col-md-6">		
+			  <ul class="nav nav-pills nav-stacked">
+					<li class="active"><a href="#">Suas materias</a></li>
+					<li><a href="#">Calculo 1</a></li>
+					<li><a href="#">Fisica 1</a></li>
+					<li><a href="#">Programacao 2</a></li>
+				  </ul>
 	
+				</div>
 
 				<div class="col-md-6">
 				  <ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#">Pesquisar Materia e tal</a></li>
-					<li><a href="#">Calculo 2Rola</a></li>
+					<li class="active">        
+						<div class="input-group">
+				            <input type="text" class="form-control" placeholder="Procurar materia" name="srch-term" id="srch-term">
+           						 <div class="input-group-btn">			
+       						         <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+           					 </div>
+        				</div>
+					</li>
+					
 					  <li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Matéria Maneira
+						<a class="dropdown-toggle" data-toggle="dropdown">Calculo 1
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
 						  <li><a href="{% url 'database:menumateria' 'GCC09978' %}" method="get">Turma A2</a></li>
-						  <li><a href="#">TurmX 2</a></li>
-						  <li><a href="#">TurmX 3</a></li>
+						  <li><a href="#">Turma B1</a></li>
+						  <li><a href="#">Turma C4</a></li>
 						</ul>
 					  </li>
-					<li><a href="#">Calculo 3Rola</a></li>
-					<li><a href="#">Prog2</a></li>
-				  </ul>
-				</div> 
+					  <li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown">Algebra linear
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+						  <li><a href="{% url 'database:menumateria' 'GCC09978' %}" method="get">Turma A2</a></li>
+						  <li><a href="#">Turma B1</a></li>
+						  <li><a href="#">Turma C4</a></li>
+						</ul>
+					  </li>
+			
+					  <li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown">Geometria analitica
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+						  <li><a href="{% url 'database:menumateria' 'GCC09978' %}" method="get">Turma A2</a></li>
+						  <li><a href="#">Turma B1</a></li>
+						  <li><a href="#">Turma C4</a></li>
+						</ul>
+			
+					  <li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown">Prog 1
+						<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+						  <li><a href="{% url 'database:menumateria' 'GCC09978' %}" method="get">Turma A2</a></li>
+						  <li><a href="#">Turma B1</a></li>
+						  <li><a href="#">Turma C4</a></li>
+						</ul>
+
+			</div>	 
 
 
-			 <div class="col-md-6">
-				  <ul class="nav nav-pills nav-stacked">
-					<li class="active"><a href="#">Suas materias e pa</a></li>
-					<li><a href="#">Calculo 1 4a vez agora vai</a></li>
-					<li><a href="#">Fisica relativistica quantica</a></li>
-					<li><a href="#">programacao de skynet</a></li>
-				  </ul>
-			</div> 			
-			 
-			</div>
+			
+		</div>
 
+	
 
 
     <!-- Bootstrap core JavaScript

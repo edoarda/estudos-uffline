@@ -22,8 +22,9 @@
   {% for nomes in nome_disc %}
     <h1><a href="/">{{ nomes.nome }}</a></h1>
 	Turma {{ nomes.turma }}
-</div>
   {% endfor %}
+</div>
+  
 
 <body>
 	<div class="doom">
@@ -69,37 +70,36 @@
 	<div class="doom">
 		<img src="{% static 'database/images/calendar.png' %}"/>
 		<h2>Datas</h2>
-		{% for provas in dataprova_list %}
-			<liv>Turma {{provas.turma}}: {{provas.prova}} - {{provas.data}}</liv>
-		{% endfor %}
+		<div class="table-responsive">
+		  <table class="table">
+			<thead>
+			  <tr>>
+				<th>Turma</th>
+				<th>Data</th>
+				<th>Prova</th>
+			  </tr>
+			</thead>
+			<tbody>
+				{% for provas in dataprova_list %}
+				  <tr>
+				    <div>
+				        <td>{{ provas.turma }}</td>
+				        <td>{{ provas.data }}</td>
+				        <td>{{ provas.prova }}</td>
+				    </div>
+				  </tr>
+				{% endfor %}
+			</tbody>
+		  </table>
+		</div>
 		<input type="submit" value="add uma data importante"/>
-	</div>
+  	</div>
 
-<div class="doom">
-  <h2>Datas das Provas</h2>
-  <div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>>
-        <th>Turma</th>
-        <th>Data</th>
-        <th>Prova</th>
-      </tr>
-    </thead>
-    <tbody>
-        {% for provas in dataprova_list %}
-          <tr>
-            <div>
-                <td>{{ provas.turma }}</td>
-                <td>{{ provas.data }}</td>
-                <td>{{ provas.prova }}</td>
-            </div>
-          </tr>
-        {% endfor %}
-    </tbody>
-  </table>
-  </div>
-</div>
+	<div class="doom">
+		<img src="{% static 'database/images/materiais.png' %}"/>
+		<h2>Materiais</h2>
+		<input type="submit" value="upload material"/>
+	</div>
 
 	<div class="doom">
 		<img src="{% static 'database/images/www.png' %}"/>
@@ -110,9 +110,4 @@
 		<input type="submit" value="add novo link pra galera"/>
 	</div>
 
-	<div class="doom">
-		<img src="{% static 'database/images/materiais.png' %}"/>
-		<h2>Materiais</h2>
-		<input type="submit" value="upload material"/>
-	</div>
 </body>
