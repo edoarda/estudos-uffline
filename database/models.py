@@ -52,6 +52,14 @@ class URL(models.Model):
     recurso_id = models.ForeignKey('Recurso', on_delete=models.PROTECT)
     url = models.URLField('')
 
+class DataProva(models.Model):
+    def __str__(self):
+        return
+    periodo_key = models.ForeignKey('Periodo', on_delete=models.PROTECT, default=20001)
+    materia_key = models.ForeignKey('Materia', on_delete=models.PROTECT, default=20001)
+    #turma = models.ForeignKey('Materia', on_delete=models.PROTECT, null=True, blank=True, default='A1', tofield='turma')
+    turma = models.CharField(max_length=2) # adeus integridade linda do meu bd
+
 #class Choice(models.Model):
 #    question = models.ForeignKey(Question, on_delete=models.PROTECT)
 #    choice_text = models.CharField(max_length=200)
