@@ -11,5 +11,5 @@ body {
     padding:35px;
     background-attachment: fixed;
     background-position: center;
-    background-size: cover;
+	background-size: contain;
 }

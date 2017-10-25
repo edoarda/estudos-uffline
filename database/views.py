@@ -15,7 +15,7 @@ class IndexView(generic.ListView):
 class MenuMateriaView(generic.ListView):
 	model = Materia
 	template_name = 'database/menumateria.html'
-	all_models_dict = {
+	'''all_models_dict = {
         "template_name": "contacts/index.html",
         "queryset": Individual.objects.all(),
         "extra_context" : {"grupo_list" : Grupo.objects.all(),
@@ -23,7 +23,7 @@ class MenuMateriaView(generic.ListView):
 						   "material_list": Material.object.all(),
                            #and so on for all the desired models...
                            }
-    }
+    }'''
 
 #def menumateria(request, materia_codigo):
 #	choice = get_object_or_404(Materia, Materia.objects.filter(codigo=materia_codigo))

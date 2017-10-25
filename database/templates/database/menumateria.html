@@ -18,22 +18,42 @@
 </head>
 
 <div class="page-header">
-	<a href="{% url 'database:index' %}">Home</a>
-    <h1><a href="/">Materia Maneira</a></h1>
+	<a href="{% url 'database:index' %}"><img src="{% static 'database/images/casa.png' %}"/></a>
+    <h1><a href="/">Matéria Maneira</a></h1>
+	Turma A2
 </div>
 
 <body>
 	<div class="doom">
+		<img src="{% static 'database/images/grupo.png' %}"/>
 		<h2>Grupos</h2>
-		
+		<div class="nico">
+			<li>25/03/2021 - 11:45 - Em Frente Ao Trailer - 3 pessoas <input type="submit" value="participar"/></li>
+			<li>27/03/2021 - 09:00 - Sala de Estudos IC - 2 pessoas <input type="submit" value="participar"/></li>
+			<li>29/03/2021 - 16:00 - DACC - 5 pessoas <input type="submit" value="cheio"/></li>
+			<input type="submit" value="add grupinho baum"/>
+		</div>
 	</div>
 	<div class="doom">
+		<img src="{% static 'database/images/www.png' %}"/>
 		<h2>Links</h2>
+		<li><a>www.google.com</a></li>
+		<li><a>www.orkut.com</a></li>
+		<li><a>www.wikipedia.com</a></li>
+		<input type="submit" value="add novo link pra galera"/>
 	</div>
 	<div class="doom">
+		<img src="{% static 'database/images/calendar.png' %}"/>
 		<h2>Datas</h2>
+		<li>30/04/2021 - V1</li>
+		<li>25/06/2021 - V2</li>
+		<li>05/07/2021 - VR</li>
+		<li>11/07/2021 - VS</li>
+		<input type="submit" value="add uma data importante"/>
 	</div>
 	<div class="doom">
+		<img src="{% static 'database/images/materiais.png' %}"/>
 		<h2>Materiais</h2>
+		<input type="submit" value="upload material"/>
 	</div>
 </body>
