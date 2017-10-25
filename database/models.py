@@ -5,7 +5,7 @@ def upload_to(instance, filename):
 
 class Grupo(models.Model):
     def __str__(self):
-        return self.materia_key
+        return str(self.materia_key)
 
     t_inicio = models.DateTimeField('data e horário de inicio')
     t_fim = models.DateTimeField('data e horário de fim')
@@ -19,7 +19,7 @@ class Materia(models.Model):
         unique_together = ('codigo', 'turma', 'periodo_key')
 
     def __str__(self):
-        return self.nome
+        return str(self.nome)
 
     codigo = models.CharField(max_length=8, primary_key=True)
     nome = models.CharField(max_length=40, default='me dê um nome de verdade')
@@ -54,8 +54,8 @@ class URL(models.Model):
     url = models.URLField('')
 
 class DataProva(models.Model):
-    def __str__(self):
-        return
+#    def __str__(self):
+#        return
     data = models.DateField(default='1900-1-1')
     prova = models.CharField(max_length=2, default='VS')
     periodo_key = models.ForeignKey('Periodo', on_delete=models.PROTECT, default=20001)
